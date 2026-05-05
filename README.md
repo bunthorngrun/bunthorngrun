@@ -1,6 +1,6 @@
 # Hi there, I'm Bunthorng Run 👋
 
-### Mathematics Graduate | BME '24 | International Scholar
+### Mathematics Graduate | BME '26 | International Scholar
 
 I am a mathematician and graduate of **@BME-Budapest**. My work focuses on the intersection of theoretical logic and complex geometric systems.
 
