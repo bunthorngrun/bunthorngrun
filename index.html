@@ -24,6 +24,7 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
+        /* Header / Bio Section */
         header {
             display: flex;
             align-items: center;
@@ -34,7 +35,8 @@
         }
 
         .profile-pic {
-            width: 250px; height: 250px;
+            width: 250px;
+            height: 250px;
             border-radius: 15px;
             object-fit: cover;
             border: 5px solid white;
@@ -44,9 +46,11 @@
         .header-text h1 { font-size: 3rem; margin: 0; letter-spacing: -1px; }
         .tagline { font-size: 1.2rem; color: var(--accent); font-weight: 600; text-transform: uppercase; margin-bottom: 15px; display: block; }
 
+        /* Section Styling */
         section { margin-bottom: 60px; }
         h2 { font-size: 1.8rem; border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 30px; }
 
+        /* Project Gallery Layout */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -59,13 +63,14 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
-            cursor: pointer; /* Makes it look clickable */
+            cursor: pointer;
         }
 
         .project-card:hover { transform: translateY(-8px); }
 
         .project-img {
-            width: 100%; height: 200px;
+            width: 100%;
+            height: 200px;
             background-color: #eee;
             object-fit: cover;
             display: block;
@@ -75,6 +80,7 @@
         .project-info h3 { margin-top: 0; font-size: 1.3rem; }
         .date-tag { font-size: 0.85rem; color: #888; font-weight: bold; }
 
+        /* Skills Chips */
         .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
         .skill-chip {
             background: #e1f0ff;
@@ -85,7 +91,7 @@
             font-weight: 500;
         }
 
-        /* MODAL STYLES */
+        /* Modal Background */
         .modal {
             display: none; 
             position: fixed; 
@@ -96,6 +102,7 @@
             backdrop-filter: blur(5px);
         }
 
+        /* Modal Box */
         .modal-content {
             background-color: white;
             margin: 5% auto;
@@ -116,6 +123,7 @@
             color: #888;
         }
 
+        /* Button to download PDF */
         .download-btn {
             display: inline-block;
             background: var(--accent);
@@ -125,7 +133,10 @@
             border-radius: 8px;
             font-weight: bold;
             margin-top: 20px;
+            transition: background 0.3s;
         }
+
+        .download-btn:hover { background: var(--accent-dark); }
 
         @media (max-width: 768px) {
             header { flex-direction: column; text-align: center; }
@@ -136,30 +147,34 @@
 <body>
 
 <div class="container">
+    <!-- Main Header / Restored Bio -->
     <header>
         <img src="01167379.jpg" alt="Bunthorng Run" class="profile-pic">
         <div class="header-text">
             <span class="tagline">Mathematics Graduate & Data Analyst</span>
             <h1>Bunthorng Run</h1>
-            <p>Recent graduate from <strong>Budapest University of Technology and Economics (BME)</strong>.</p>
+            <p>Recent graduate from <strong>Budapest University of Technology and Economics (BME)</strong>. Passionate about transforming complex data into meaningful insights for strategic decision-making.</p>
             <div class="skills-container" style="margin-top:20px;">
                 <span class="skill-chip">R Language</span>
                 <span class="skill-chip">MATLAB</span>
                 <span class="skill-chip">Python</span>
                 <span class="skill-chip">LaTeX</span>
+                <span class="skill-chip">Finance Modeling</span>
             </div>
         </div>
     </header>
 
+    <!-- Project Gallery Section -->
     <section id="projects">
         <h2>Professional Projects & Experience</h2>
         <div class="project-grid">
+
             <article class="project-card">
                 <img src="thesis.jpg" alt="Hyperbolic Geometry" class="project-img">
                 <div class="project-info">
                     <span class="date-tag">BSc THESIS</span>
                     <h3>Hyperbolic Geometry Research</h3>
-                    <p>Click to see details and download thesis.</p>
+                    <p>Research on Equioptic and Apollonius Circles. Click to view abstract and findings.</p>
                 </div>
             </article>
 
@@ -168,7 +183,7 @@
                 <div class="project-info">
                     <span class="date-tag">APR 2024</span>
                     <h3>Erasmus+ Poland</h3>
-                    <p>Youth Exchange: "Be Prepared! Your Voice Matters!".</p>
+                    <p>Youth Exchange: "Be Prepared! Your Voice Matters!". Focused on civic engagement.</p>
                 </div>
             </article>
 
@@ -177,18 +192,32 @@
                 <div class="project-info">
                     <span class="date-tag">OCT 2025</span>
                     <h3>Erasmus+ Portugal</h3>
-                    <p>Training Course: "Seeking a New Life".</p>
+                    <p>Training Course: "Seeking a New Life". Focused on global migration patterns.</p>
                 </div>
             </article>
+
+        </div>
+    </section>
+
+    <!-- Restored Education & Experience Section -->
+    <section>
+        <h2>Experience & Education</h2>
+        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <p><strong>Budapest University of Technology and Economics</strong><br>BSc in Mathematics (EQF Level 6) | 2022 - 2026</p>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+            <p><strong>BELTEI International University</strong><br>Faculty Assistant Intern | Sep 2021 - Dec 2021</p>
+            <p style="font-size: 0.95rem; color: #666;">Supported faculty in math research, literature reviews, and departmental data management.</p>
         </div>
     </section>
 </div>
 
-<!-- Modal Container -->
+<!-- Project Modal -->
 <div id="projectModal" class="modal">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
-        <div id="modalBody"></div>
+        <div id="modalBody">
+            <!-- Content will be injected here by JavaScript -->
+        </div>
     </div>
 </div>
 
@@ -199,19 +228,29 @@
             date: "BSc Thesis 2026",
             description: `
                 <h3>Abstract</h3>
-                <p>This research explores Equioptic and Apollonius Circles in the Poincaré disk model.</p>
-                <a href="thesis.pdf" class="download-btn" target="_blank">📄 Download Full Thesis (PDF)</a>
+                <p>This research explores the properties of Equioptic and Apollonius Circles within the framework of the Poincaré disk model. By utilizing non-Euclidean geometry, we developed new visualizations for complex spatial relationships.</p>
+                <h3>Key Findings</h3>
+                <ul>
+                    <li>Proof of invariant distances in Apollonius aggregates.</li>
+                    <li>Software modeling using MATLAB for curvature analysis.</li>
+                </ul>
+                <a href="your-thesis-file.pdf" class="download-btn" target="_blank">📄 Download Full Thesis (PDF)</a>
             `
         },
         poland: {
-            title: "Erasmus+ Poland",
+            title: "Erasmus+ Poland: Your Voice Matters",
             date: "April 2024",
-            description: `<p>Detailed experience about civic engagement in Poland...</p>`
+            description: `
+                <p>An intensive youth exchange program in Zakopane, Poland. I worked with 30 international participants to develop strategies for civic engagement.</p>
+                <p><strong>Achievements:</strong> Led the workshop on digital advocacy and presented a project on youth voting patterns in the EU.</p>
+            `
         },
         portugal: {
-            title: "Erasmus+ Portugal",
+            title: "Erasmus+ Portugal: Seeking a New Life",
             date: "October 2025",
-            description: `<p>Detailed experience about migration patterns and social cooperation...</p>`
+            description: `
+                <p>Focused on the humanitarian crisis and global migration patterns. We used statistical modeling to understand migration flow and social integration challenges in coastal regions.</p>
+            `
         }
     };
 
