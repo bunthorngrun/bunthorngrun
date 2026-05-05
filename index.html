@@ -46,6 +46,10 @@
         .header-text h1 { font-size: 3rem; margin: 0; letter-spacing: -1px; }
         .tagline { font-size: 1.2rem; color: var(--accent); font-weight: 600; text-transform: uppercase; margin-bottom: 15px; display: block; }
 
+        /* Section Styling */
+        section { margin-bottom: 60px; }
+        h2 { font-size: 1.8rem; border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 30px; }
+
         /* Project Gallery Layout */
         .project-grid {
             display: grid;
@@ -88,7 +92,7 @@
             margin: 5px 2px;
         }
 
-        /* Modal Styles */
+        /* Modal Background */
         .modal {
             display: none; 
             position: fixed; 
@@ -99,15 +103,16 @@
             backdrop-filter: blur(5px);
         }
 
+        /* Modal Box */
         .modal-content {
             background-color: white;
-            margin: 5% auto;
+            margin: 2% auto;
             padding: 40px;
             border-radius: 15px;
-            max-width: 900px;
+            max-width: 950px;
             width: 90%;
             position: relative;
-            max-height: 85vh;
+            max-height: 90vh;
             overflow-y: auto;
         }
 
@@ -155,10 +160,14 @@
             border-radius: 8px;
             font-weight: bold;
             margin-top: 20px;
+            transition: background 0.3s;
         }
+
+        .download-btn:hover { background: var(--accent-dark); }
 
         @media (max-width: 768px) {
             header { flex-direction: column; text-align: center; }
+            .header-text h1 { font-size: 2.2rem; }
             .narrative-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -166,21 +175,29 @@
 <body>
 
 <div class="container">
+    <!-- Main Header -->
     <header>
         <img src="01167379.jpg" alt="Bunthorng Run" class="profile-pic">
         <div class="header-text">
             <span class="tagline">Mathematics Graduate & Data Analyst</span>
             <h1>Bunthorng Run</h1>
-            <p>Mathematics graduate from <strong>BME (Hungary)</strong>. Specialist in Hyperbolic Geometry and statistical modeling.</p>
+            <p>
+                Bunthorng is a recent Mathematics graduate from <strong>Budapest University of Technology and Economics (BME)</strong>. Originally from Cambodia, he has been studying in Hungary since 2022. He specializes in transforming complex data into strategic insights, with a strong academic background in Hyperbolic Geometry and statistical modeling.
+            </p>
+            <p>
+                With a technical background in <strong>R, MATLAB, and Python</strong>, Bunthorng is passionate about the intersection of pure mathematics and data science. He is also a frequent participant in Erasmus+ programs in Poland and Portugal.
+            </p>
             <div class="skills-container">
                 <span class="skill-chip">R Language</span>
                 <span class="skill-chip">MATLAB</span>
                 <span class="skill-chip">Python</span>
+                <span class="skill-chip">LaTeX</span>
                 <span class="skill-chip">Finance Modeling</span>
             </div>
         </div>
     </header>
 
+    <!-- Project Gallery Section -->
     <section id="projects">
         <h2>Professional Projects & Experience</h2>
         <div class="project-grid">
@@ -189,7 +206,7 @@
                 <div class="project-info">
                     <span class="date-tag">BSc THESIS</span>
                     <h3>Hyperbolic Geometry Research</h3>
-                    <p>Research on Equioptic and Apollonius Circles.</p>
+                    <p>Research on Equioptic and Apollonius Circles. Click to view abstract and findings.</p>
                 </div>
             </article>
 
@@ -198,7 +215,7 @@
                 <div class="project-info">
                     <span class="date-tag">APR 2024</span>
                     <h3>Erasmus+ Poland</h3>
-                    <p>Youth Exchange: "Be Prepared! Your Voice Matters!".</p>
+                    <p>Youth Exchange: "Be Prepared! Your Voice Matters!". Focused on civic engagement.</p>
                 </div>
             </article>
 
@@ -207,13 +224,25 @@
                 <div class="project-info">
                     <span class="date-tag">OCT 2025</span>
                     <h3>Erasmus+ Portugal</h3>
-                    <p>Training Course: "Seeking a New Life".</p>
+                    <p>Training Course: "Seeking a New Life". Focused on global migration patterns.</p>
                 </div>
             </article>
         </div>
     </section>
+
+    <!-- Education & Experience Section -->
+    <section>
+        <h2>Experience & Education</h2>
+        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <p><strong>Budapest University of Technology and Economics</strong><br>BSc in Mathematics (EQF Level 6) | 2022 - 2026</p>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+            <p><strong>BELTEI International University</strong><br>Faculty Assistant Intern | Sep 2021 - Dec 2021</p>
+            <p style="font-size: 0.95rem; color: #666;">Supported faculty in math research, literature reviews, and departmental data management.</p>
+        </div>
+    </section>
 </div>
 
+<!-- Project Modal -->
 <div id="projectModal" class="modal">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
@@ -228,14 +257,22 @@
             date: "BSc Thesis 2026",
             description: `
                 <h3>Abstract</h3>
-                <p>This thesis extends the study of equioptic and Apollonius loci within the Cayley-Klein disk model...</p>
+                <p>This thesis extends the study of equioptic and Apollonius loci within the Cayley-Klein disk model, focusing on loci generated by hyperbolic circles. We derive explicit analytic equations for equioptic loci of hyperbolic circles in the unit disk using the isopitc locus framework, analyze their existence and structure, and examine their intersection behavior. In parallel, we obtain an explicit expression for the hyperbolic Apollonius locus, showing that it is a highly nonlinear quartic curve rather than a hyperbolic circle. The results highlight a fundamental transition from quadratic Euclidean loci to these higher-degree hyperbolic loci, which reflects the projective nature and geometric complexities of the disk model. Specifically, the geometric class of the locus is invariant under hyperbolic isometries. Despite the increased algebraic complexity, the angular constraints of three hyperbolic circles still result in at most two real equioptic points, analogous to the Euclidean case.</p>
+                <h3>Key Findings</h3>
+                <ul>
+                    <li>Proof of invariant distances in Apollonius aggregates.</li>
+                    <li>Software modeling using MATLAB for curvature analysis.</li>
+                </ul>
                 <a href="Equioptic and Apollonius Circles in Hyperbolic Geometry.pdf" class="download-btn" target="_blank">📄 Download Full Thesis (PDF)</a>
             `
         },
         poland: {
             title: "Erasmus+ Poland: Your Voice Matters",
             date: "April 2024",
-            description: `<p>International youth exchange focused on civic engagement and digital advocacy.</p>`
+            description: `
+                <p>An intensive youth exchange program in Zakopane, Poland. I worked with 30 international participants to develop strategies for civic engagement.</p>
+                <p><strong>Achievements:</strong> Led the workshop on digital advocacy and presented a project on youth voting patterns in the EU.</p>
+            `
         },
         portugal: {
             title: "Erasmus+ Portugal: Seeking a New Life",
@@ -244,19 +281,22 @@
                 <div class="narrative-grid">
                     <div class="story-text">
                         <h3>The Mission: "Seeking a New Life"</h3>
-                        <p>In October 2025, I traveled to Portugal for a training course on youth worker mobility and migration.</p>
-                        <div class="highlight-quote">"I immersed myself in a process of self-assessment and cultural reflection."</div>
+                        <p>In October 2025, I traveled to Portugal to participate in a high-impact training course supported by the <strong>European Union Erasmus+ programme</strong>. This project focused on youth worker mobility and the complex challenges of migration in the modern world.</p>
+                        <div class="highlight-quote">"I didn't just attend a course; I immersed myself in a process of self-assessment and cultural reflection that reshaped how I view community-building."</div>
                         <h3>The Transformation</h3>
-                        <p>During the project, I moved beyond the role of a participant and became a <strong>facilitator</strong>.</p>
-                        <div>
+                        <p>During the project, I moved beyond the role of a participant and became a <strong>facilitator</strong>. I designed purposeful educational sequences and learned to manage resources—optimizing time and personnel effectively to ensure maximum impact.</p>
+                        <p>This journey equipped me with skills to advocate for social change and promote democratic values. I am now proficient in assessing learning outcomes and constantly adapting my methods for continuous improvement.</p>
+                        <div style="margin-top: 20px;">
                             <span class="skill-tag">Intercultural Sensitivity</span>
-                            <span class="skill-tag">Resource Management</span>
+                            <span class="skill-tag">Civic Engagement</span>
                             <span class="skill-tag">Team Collaboration</span>
+                            <span class="skill-tag">Program Design</span>
+                            <span class="skill-tag">Resource Management</span>
                         </div>
                     </div>
                     <div class="proof-zone">
                         <img src="000085880023.jpg" alt="Portugal Facilitation" style="width:100%; border-radius:8px;">
-                        <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">Facilitating a non-formal learning session in Portugal</p>
+                        <p style="font-size: 0.8rem; color: #666; margin-top: 10px; text-align:center;">Facilitating a non-formal learning session in Portugal</p>
                     </div>
                 </div>
             `
@@ -271,7 +311,6 @@
         card.addEventListener('click', () => {
             const altText = card.querySelector('img').alt.toLowerCase();
             let data;
-            
             if(altText.includes('geometry')) data = projectData.thesis;
             else if(altText.includes('poland')) data = projectData.poland;
             else if(altText.includes('portugal')) data = projectData.portugal;
@@ -279,7 +318,7 @@
             if(data) {
                 modalBody.innerHTML = `
                     <span class="date-tag">${data.date}</span>
-                    <h1>${data.title}</h1>
+                    <h1 style="margin: 10px 0;">${data.title}</h1>
                     <hr style="border:0; border-top:1px solid #eee; margin: 20px 0;">
                     ${data.description}
                 `;
