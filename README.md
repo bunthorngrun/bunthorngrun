@@ -1,8 +1,8 @@
-# Hi there, I'm Bunthorng Run 👋
+# Hi there, I'm Bunthorng
 
-### Mathematics Graduate | BME '26 | International Scholar
+### Mathematics Graduate | BME '26 
 
-I am a mathematician and graduate of **@BME-Budapest**. My work focuses on the intersection of theoretical logic and complex geometric systems.
+I am a mathematician and graduate of **@BME-Budapest**. My work focuses on the comparison of Equioptic and Apollonian circles in Cayley-Klein Disk Model.
 
 ---
 
@@ -12,5 +12,5 @@ I am a mathematician and graduate of **@BME-Budapest**. My work focuses on the i
 - **Scholarship:** Former **Stipendium Hungaricum** scholar from Cambodia.
 
 ### 🌍 International Experience
-- **Erasmus+ Poland:** Participated in international exchange and academic collaboration.
+- **Erasmus+ Poland:** Participated in youth exchange and academic collaboration.
 - **Erasmus+ Portugal:** Focused on cross-cultural initiatives and global education projects.
